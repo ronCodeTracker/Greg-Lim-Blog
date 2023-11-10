@@ -25,12 +25,36 @@ mongoose.connect('mongodb://127.0.0.1:27017/my_database2')
 
 var id = "654d63b7afa0588ab1ba3778"
 
-BlogPost.findById(id).then(result => {
+//BlogPost.findById(id).then(result => {
+//    console.log(result)
+//})
+//    .catch(err => {
+//        console.log("There is an error: " + err)
+//    })
+
+
+
+//BlogPost.findByIdAndUpdate(id, {
+//    title: "Lord of the Plains"
+//}).then(result => {
+//    console.log(result)
+//})
+//    .catch(err => {
+//        console.log("There is an error: " + err)
+//    })
+
+
+
+var id_2 = "654d836b171283e6a5c99b93"
+
+
+BlogPost.findByIdAndDelete(id_2).then(result => {
     console.log(result)
 })
     .catch(err => {
         console.log("There is an error: " + err)
     })
+
 
 
 
