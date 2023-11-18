@@ -13,7 +13,7 @@ const ejs = require('ejs')
 
 app.set('view engine', 'ejs')
 
-mongoose.connect('mongodb://127.0.0.1:27017/my_database2', { useNewUrlParser: true })
+mongoose.connect('mongodb://127.0.0.1:27017/my_database2')
 
 app.use(express.static('public'))
 
@@ -44,4 +44,10 @@ app.get('/post', (req, res) => {
 app.get('/contact', (req, res) => {
     res.render('contact')
 })
+
+
+app.get('/posts/new', (req, res)=> {
+    res.render('create')
+})
+
 
