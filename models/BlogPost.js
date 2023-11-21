@@ -9,6 +9,7 @@ const BlogPostSchema = new Schema({
     body: String
 });
 
+BlogPostSchema.index({title: 'text'})
 
 const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
 

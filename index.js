@@ -51,6 +51,23 @@ app.get('/', (req, res) => {
     //res.render('index')
 })
 
+
+
+app.post('/', (req, res) => {
+
+    var titleOne = "Lord"
+    //BlogPost.createIndexes({ "title": "text" })
+    
+    BlogPost.find({ $text: { $search: req.body.searchdata } }).then(result => {
+        console.log(result)
+        res.render('index', { result })
+    })
+
+        
+})
+
+
+
 app.get('/about', (req, res) => {
     res.render('about')
 })
@@ -76,5 +93,6 @@ app.post('/posts/store', (req, res) => {
     )
     
 })
+
 
 
