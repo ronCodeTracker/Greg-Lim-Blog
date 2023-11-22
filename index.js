@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
 
-    var titleOne = "Lord"
+    //var titleOne = "Lord"
     //BlogPost.createIndexes({ "title": "text" })
     
     BlogPost.find({ $text: { $search: req.body.searchdata } }).then(result => {
@@ -63,17 +63,30 @@ app.post('/', (req, res) => {
         res.render('index', { result })
     })
 
-        
+        // using index in models folder BlogPost.js
+        // we then search for  string that is in searchdata element
+        // then mongodb finds the post that matches
+        // then we render index.ejs with the included values for result object
+        // that has our title and body data
 })
+
+
+
+app.get('/post/:id', (req, res) => {
+
+    BlogPost.findById(req.params.id).then(result => {
+        console.log(result._id)
+        res.render('post', {result})
+    })
+
+    //res.render('post')
+})
+
 
 
 
 app.get('/about', (req, res) => {
     res.render('about')
-})
-
-app.get('/post', (req, res) => {
-    res.render('post')
 })
 
 app.get('/contact', (req, res) => {
