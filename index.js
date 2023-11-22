@@ -6,8 +6,14 @@ const path = require('path')
 
 const mongoose = require('mongoose')
 
+const fileUpload = require('express-fileupload')
+
+
 
 const app = new express()
+
+
+app.use(fileUpload())
 
 const ejs = require('ejs')
 
@@ -104,12 +110,18 @@ app.get('/posts/new', (req, res)=> {
 
 
 app.post('/posts/store', (req, res) => {
-    console.log(req.body)
-    BlogPost.create(req.body).then(
-        res.redirect('/')
-    )
-    
+
+    let image = req.files.image
+
+    image.mv(path.resolve(__dirname, 'public/assets/img', image.name), async (error) => {
+        console.log(req.body)
+        BlogPost.create({ ...req.body, image: '/assets/img/' + image.name }).then(
+            res.redirect('/'))
+    })
+
 })
+    
+
 
 
 

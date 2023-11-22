@@ -33,7 +33,16 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form id="contactForm" action="/posts/store" method="POST">
+                            <form id="contactForm" action="/posts/store" method="POST" enctype="multipart/form-data">
+
+                                <div class="form-floating">
+                                    <input class="form-control" id="image" type="file" placeholder="Enter your title..." name="image" />
+                                    <label for="image">Image</label>
+                                    <!--<div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>-->
+                                </div>
+
+
+
                                 <div class="form-floating">
                                     <input class="form-control" id="title" type="text" placeholder="Enter your title..." name="title" />
                                     <label for="title">Title</label>

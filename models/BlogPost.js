@@ -12,7 +12,9 @@ const BlogPostSchema = new Schema({
         type: Date,
         default: new Date()
 
-    }
+    },
+    image: String
+
 });
 
 BlogPostSchema.index({title: 'text'})
