@@ -80,6 +80,10 @@ app.get('/post/:id', (req, res) => {
     })
 
     //res.render('post')
+    // use a parameter by adding /:id
+    // then use it with req.params.id to get the post
+    // with that id.  result obj is then passed to the 
+    // postl.ejs view.
 })
 
 
