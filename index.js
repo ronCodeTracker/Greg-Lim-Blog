@@ -64,23 +64,13 @@ const validateMiddleWare = (req, res, next) => {
 
 app.use('/posts/store', validateMiddleWare)
 
-app.get('/', (req, res) => {
+//   ************************************************************
 
-    //Display a list of blog posts (interacting with MongoDb)
-    BlogPost.find({}).then(result => {
-        console.log(result)
-        res.render('index', { result })
-        // whenever the key name and the value name are the same
-        // (e.g. blogposts: blogposts) we can shorten it to simply 'index',{blogposts}
-        // or in our case result is out name for blogposts
-        //  'index',{blogposts:blogposts}  is how it would be not shortened
-        // index.ejs view now has access to the blogposts variable
 
-    })
-
-    //res.render('index')
-})
-
+// home request handler *****************************************
+const homeController = require('./controllers/home.js')
+app.get('/', homeController)
+//  *************************************************************
 
 
 app.post('/', (req, res) => {
@@ -119,35 +109,16 @@ app.get('/post/:id', (req, res) => {
 
 
 
-app.get('/about', (req, res) => {
-    res.render('about')
-})
-
-app.get('/contact', (req, res) => {
-    res.render('contact')
-})
-
-
+//  Go to Page for form to make a new post handler   ******************
 const newPostController = require('./controllers/newPost.js')
-
-
-
 app.get('/posts/new', newPostController)
+//  *******************************************************************
 
 
-
-app.post('/posts/store', (req, res) => {
-
-    let image = req.files.image
-
-    image.mv(path.resolve(__dirname, 'public/assets/img', image.name), async (error) => {
-        console.log(req.body)
-        BlogPost.create({ ...req.body, image: '/assets/img/' + image.name }).then(
-            res.redirect('/'))
-    })
-
-})
-    
+//  create a post in mongodb handler  ************************************
+const storePostController = require('./controllers/storePost.js')
+app.post('/posts/store', storePostController)
+//  **********************************************************************    
 
 
 
