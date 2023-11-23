@@ -19,6 +19,7 @@ const ejs = require('ejs')
 
 // new November 18, 2023
 const BlogPost = require('./models/BlogPost.js')
+const { request } = require('http')
 
 app.set('view engine', 'ejs')
 
@@ -39,6 +40,29 @@ app.listen(4000, () => {
 })
 
 
+// example of making your own middleware ***********************
+
+const customMiddleWare = (req, res, next) => {
+    console.log('Custom middleware called')
+    next()
+}
+
+app.use(customMiddleWare)
+
+//  *************************************************************
+// another middleware *******************************************
+
+const validateMiddleWare = (req, res, next) => {
+
+    console.log(req.files)
+    console.log("posts/store in use....")
+    if (req.files == null || req.body.title == null) {
+        return res.redirect('/posts/new')
+    }
+    next()
+}
+
+app.use('/posts/store', validateMiddleWare)
 
 app.get('/', (req, res) => {
 
