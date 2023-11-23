@@ -84,8 +84,19 @@ app.get('/posts/new', newPostController)
 //  create a post in mongodb handler  ************************************
 const storePostController = require('./controllers/storePost.js')
 app.post('/posts/store', storePostController)
-//  **********************************************************************    
+//  **********************************************************************
 
+
+//  Go to NewUser page for new user form to add user info to mongodb database request handler
+const newUserController = require('./controllers/newUser')
+app.get('/auth/register', newUserController)
+//   ****************************************************************************************
+
+
+//  create User and Password data in mongodb database request handler  ************
+const storeUserController = require('./controllers/storeUser')
+app.post('/users/register', storeUserController)
+//   ******************************************************************************
 
 
 
