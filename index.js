@@ -42,14 +42,7 @@ app.use(customMiddleWare)
 //  *************************************************************
 
 // another middleware *******************************************
-const validateMiddleWare = (req, res, next) => {
-    console.log(req.files)
-    console.log("posts/store in use....")
-    if (req.files == null || req.body.title == null) {
-        return res.redirect('/posts/new')
-    }
-    next()
-}
+const validateMiddleWare = require('./middleware/validateMiddleware')
 app.use('/posts/store', validateMiddleWare)
 //   ************************************************************
 
