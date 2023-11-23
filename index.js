@@ -128,9 +128,12 @@ app.get('/contact', (req, res) => {
 })
 
 
-app.get('/posts/new', (req, res)=> {
-    res.render('create')
-})
+const newPostController = require('./controllers/newPost.js')
+
+
+
+app.get('/posts/new', newPostController)
+
 
 
 app.post('/posts/store', (req, res) => {
