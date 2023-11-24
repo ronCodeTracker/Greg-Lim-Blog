@@ -8,9 +8,18 @@ const path = require('path')
 
 
 module.exports = (req, res) => {
+    if (req != null) {
+        User.create(req.body).then(result => {
 
-    User.create(req.body).then(res.redirect('/'))
 
-    
+            console.log("result = " + result)
+            res.redirect('/')
+
+        })
+            .catch((err) => {
+                console.log(err)
+                res.redirect('/auth/register')
+            })
+    }
 
 }

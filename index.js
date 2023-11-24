@@ -99,4 +99,15 @@ app.post('/users/register', storeUserController)
 //   ******************************************************************************
 
 
+// import the login controller  ***************************
+const loginController = require('./controllers/login')
+app.get('/auth/login', loginController)
+//  *******************************************************
+
+
+//  use loginUser Controller to check username and password
+const loginUserController = require('./controllers/loginUser')
+app.post('/users/login', loginUserController)
+//  ********************************************************
+
 
