@@ -8,7 +8,8 @@ module.exports = (req, res) => {
 
     //Display a list of blog posts (interacting with MongoDb)
     BlogPost.find({}).then(result => {
-        console.log(result)
+        console.log("result :" + result)
+        console.log("session: " + req.session.userId)
         res.render('index', { result })
         // whenever the key name and the value name are the same
         // (e.g. blogposts: blogposts) we can shorten it to simply 'index',{blogposts}

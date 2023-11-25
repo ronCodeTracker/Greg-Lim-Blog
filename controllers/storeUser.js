@@ -17,7 +17,26 @@ module.exports = (req, res) => {
 
         })
             .catch((err) => {
-                console.log(err)
+                console.log("err: " + err)
+
+                try {
+
+                    const validationErrors = Object.keys(err.errors).map(key => err.errors[key].message)
+                    console.log("val errors: " + validationErrors)
+                    req.flash('validationErrors',validationErrors)
+                    //req.session.validationErrors = validationErrors
+                    req.flash('data',req.body)
+
+                }
+                catch {
+                    req.flash('validationError',err.toString())
+                    //req.session.validationError = err.toString()
+                    req.flash('data',req.body)
+                }
+                
+                
+                
+                
                 res.redirect('/auth/register')
             })
     }

@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
     <%-include('layouts/header');-%>
@@ -13,7 +14,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>Register your username</h1>
+                            <h1>404 page not found</h1>
                             <span class="subheading">Sign in please.</span>
                         </div>
                     </div>
@@ -25,7 +26,7 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Want to have access? Fill out the User Name and Password information on the form.  Thanks.</p>
+                        <p>Want to have access? Signin with User Name and Password information on the form.  Thanks.</p>
                         <div class="my-5">
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -34,41 +35,20 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-
-                            <% if(errors != null  && errors.length > 0){%>
-                            <ul class="list-group"></ul>
-                            <% for(var i=0; i< errors.length;i++){%>
-                            <li class="list-group-item list-group-item-danger"><%= errors[i]%></li>
-                            <%}%>
-                            
-                            <%}%>
-
-
-                            <% if(error != null){%>
-                                <ul class="list-group"></ul>
-                                
-                                <li class="list-group-item list-group-item-danger"><%= error%></li>
-                                
-                                
-                                <%}%>
-
-
-
-
-                            <form id="contactForm" action="/users/register" method="POST" enctype="multipart/form-data">
+                            <form id="contactForm" action="/users/login" method="POST" enctype="multipart/form-data">
 
                                 
 
 
 
                                 <div class="form-floating">
-                                    <input class="form-control" id="title" type="text" placeholder="User Name" name="username" value="<%= username %>" />
+                                    <input class="form-control" id="title" type="text" placeholder="User Name" name="username" />
                                     <label for="username">User Name</label>
                                     <!--<div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>-->
                                 </div>
                                 
                                 <div class="form-floating">
-                                    <input class="form-control" id="password" type="password" placeholder="Password" name="password" value="<%= password %>" />
+                                    <input class="form-control" id="password" type="password" placeholder="Password" name="password" />
                                     <label for="password">Password</label>
                                     <!--<div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>-->
                                 </div>
@@ -92,7 +72,7 @@
                                 <!-- an error submitting the form-->
                                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                 <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Register</button>
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Login</button>
                             </form>
                         </div>
                     </div>
@@ -109,6 +89,11 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+
+
+
+
+
 
 
 
