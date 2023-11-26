@@ -26,6 +26,25 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
                         <div class="my-5">
+                            <% if(errors2 != null  && errors2.length > 0){%>
+                                <ul class="list-group"></ul>
+                                <% for(var i=0; i< errors2.length;i++){%>
+                                <li class="list-group-item list-group-item-danger"><%= errors2[i]%></li>
+                                <%}%>
+                                
+                                <%}%>
+
+
+                                <% if(error2 != null){%>
+                                    <ul class="list-group"></ul>
+                                    
+                                    <li class="list-group-item list-group-item-danger"><%= error2%></li>
+                                    
+                                    
+                                    <%}%>
+
+
+
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
                             <!-- * * * * * * * * * * * * * * *-->
@@ -44,7 +63,7 @@
 
 
                                 <div class="form-floating">
-                                    <input class="form-control" id="title" type="text" placeholder="Enter your title..." name="title" />
+                                    <input class="form-control" id="title" type="text" placeholder="Enter your title..." name="title" value="<%= title %>" />
                                     <label for="title">Title</label>
                                     <!--<div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>-->
                                 </div>

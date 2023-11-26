@@ -5,7 +5,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const BlogPostSchema = new Schema({
-    title: String,
+    title: {
+        type: String,
+        required: [true, "Please provice title."]
+    },
     body: String,
     username: String,
     datePosted: {/* can declare property type with an object like this becasue we need 'default'*/
@@ -13,7 +16,10 @@ const BlogPostSchema = new Schema({
         default: new Date()
 
     },
-    image: String
+    image: {
+        type: String,
+        required: [true, "Please provide image"]
+    }
 
 });
 
