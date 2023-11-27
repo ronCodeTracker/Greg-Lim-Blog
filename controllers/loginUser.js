@@ -22,17 +22,20 @@ module.exports = (req, res) => {
                 }
                 else {
                     console.log("passwords not the same " + password)
+                    req.flash('passwordWrong', "Password is wrong")
                     res.redirect('/auth/login')
                 }
             })
         }
         else {
             console.log("result null: " + result)
+            req.flash('usernameNotFound', "Username was not found")
             res.redirect('/auth/login')
         }
     })
         .catch(x=>{
             console.log("username not there" + x)
+            req.flash('usernameNotFound', "Username was not found")
             res.redirect('/auth/login')
         })
              

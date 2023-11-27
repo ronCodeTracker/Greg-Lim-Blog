@@ -3,7 +3,11 @@
 
 
 module.exports = (req, res) => {
-    res.render('login')
+
+
+
+
+    res.render('login', { passwordWrong: req.flash('passwordWrong'), usernameNotFound: req.flash('usernameNotFound') })
 
 }
 

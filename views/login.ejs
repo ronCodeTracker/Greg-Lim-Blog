@@ -37,6 +37,28 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
+
+                            <% if(passwordWrong != null){%>
+                                <ul class="list-group"></ul>
+                                
+                                <li class="list-group-item list-group-item-danger"><%= passwordWrong %></li>
+                                
+                                
+                                <%}%>
+
+
+                                <% if(usernameNotFound != null){%>
+                                    <ul class="list-group"></ul>
+                                    
+                                    <li class="list-group-item list-group-item-danger"><%= usernameNotFound %></li>
+                                    
+                                    
+                                    <%}%>
+
+
+
+
+
                             <form id="contactForm" action="/users/login" method="POST" enctype="multipart/form-data">
 
                                 
