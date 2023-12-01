@@ -8,7 +8,7 @@ module.exports = (req, res) => {
 
        
 
-        return res.render("create", {errors2:req.flash('validationErrors2'), error2: req.flash('validationError2')});
+        return res.render("create", {errors2:req.flash('validationErrors2'), error2: req.flash('validationError2'), title: null});
     }
 
 
