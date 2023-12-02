@@ -7,7 +7,7 @@ module.exports = (req, res) => {
 
 
     //Display a list of blog posts (interacting with MongoDb)
-    BlogPost.find({}).then(result => {
+    BlogPost.find({}).populate('userid').then(result => {
         console.log("result :" + result)
         console.log("session: " + req.session.userId)
         res.render('index', { result })

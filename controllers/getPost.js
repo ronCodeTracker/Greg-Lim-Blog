@@ -6,7 +6,7 @@ const BlogPost = require('../models/BlogPost.js')
 
 module.exports = (req, res) => {
 
-    BlogPost.findById(req.params.id).then(result => {
+    BlogPost.findById(req.params.id).populate('userid').then(result => {
         console.log(result._id)
         res.render('post', { result })
     })
