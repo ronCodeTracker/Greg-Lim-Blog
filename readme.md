@@ -6,7 +6,7 @@
 # Date:  December 03, 2023
 # Description:  Blog Web Application with js and node and express and mongodb
 
-# from the book on Express js by Greg Lim
+# from the book on Beginning Node.js, Express, and MongoDb Development by Greg Lim
 
 
 
