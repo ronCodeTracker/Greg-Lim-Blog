@@ -23,7 +23,7 @@ const { request } = require('http')
 
 app.set('view engine', 'ejs')
 
-mongoose.connect( process.env.DB_NAME )
+mongoose.connect( process.env.DB_NAME2 )
 
 app.use(express.static('public'))
 app.use(express.json())
