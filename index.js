@@ -13,6 +13,8 @@ const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session')
 const flash = require('connect-flash')
+require('dotenv').config()
+
 const app = new express()
 app.use(fileUpload())
 app.use(flash())
@@ -21,7 +23,7 @@ const { request } = require('http')
 
 app.set('view engine', 'ejs')
 
-mongoose.connect('mongodb://127.0.0.1:27017/my_database2')
+mongoose.connect( process.env.DB_NAME )
 
 app.use(express.static('public'))
 app.use(express.json())
