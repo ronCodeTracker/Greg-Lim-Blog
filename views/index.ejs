@@ -40,13 +40,13 @@
                             <%= result [i].title %>
                         </h2>
                         <h3 class="post-subtitle">
-                            <%= result[i].body %>
+                            <%- result[i].body %>
                         </h3>
                     </a>
                     <p class="post-meta">
                         Posted by
                         <%= result[i].userid.username %>
-                        on <%= result[i].datePosted %>
+                        on <%= moment(result[i].datePosted).format('MM-DD-YYYY') %>
                     </p>
                 </div>
                 <!-- Divider-->

@@ -38,7 +38,7 @@
                                 <% if(error2 != null){%>
                                     <ul class="list-group"></ul>
                                     
-                                    <li class="list-group-item list-group-item-danger"><%= error2%></li>
+                                    <!--<li class="list-group-item list-group-item-danger"><%= error2%></li>-->
                                     
                                     
                                     <%}%>
@@ -69,8 +69,9 @@
                                 </div>
                                 
                                 <div class="form-floating">
+                                    <div>Body</div>
                                     <textarea class="form-control" id="body" placeholder="Enter your body text here..." style="height: 12rem" name="body"></textarea>
-                                    <label for="body">Body</label>
+                                    <label for="body"></label>
                                     <!--<div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>-->
                                 </div>
                                 <br />
@@ -107,6 +108,16 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+            $('#body').summernote({
+
+                placeholder: 'Hello bootstrap 4',
+                tabsize: 2,
+                height: 200
+
+           
+            });
+        </script>
     </body>
 </html>
 

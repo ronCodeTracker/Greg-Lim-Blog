@@ -1,4 +1,4 @@
-
+var moment = require('moment')
 
 const BlogPost = require('../models/BlogPost.js')
 
@@ -10,7 +10,7 @@ module.exports = (req, res) => {
     BlogPost.find({}).populate('userid').then(result => {
         console.log("result :" + result)
         console.log("session: " + req.session.userId)
-        res.render('index', { result })
+        res.render('index', { result, moment: moment })
         // whenever the key name and the value name are the same
         // (e.g. blogposts: blogposts) we can shorten it to simply 'index',{blogposts}
         // or in our case result is out name for blogposts

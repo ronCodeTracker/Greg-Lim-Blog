@@ -26,9 +26,9 @@ module.exports = (req, res) => {
 
             console.log("errpost: " + err)
             try{
-                const validationErrors2 = Object.keys(err.errors).map(key => err.errors[key].message )
-                console.log("valitdate errors: " + validationErrors2)
-                req.flash('validationErrors2', validationErrors2)
+                //const validationErrors2 = Object.keys(err.errors).map(key => err.errors[key].message )
+                console.log("valitdate errors: ")
+                
                 
             }
             catch {
@@ -39,6 +39,8 @@ module.exports = (req, res) => {
             }
 
             res.redirect('/posts/new')
+
+            req.flash('validationErrors2', "error")
 
         })
 

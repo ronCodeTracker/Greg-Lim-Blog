@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\controllers",
+    "\\models",
+    "\\views",
+    "\\views\\layouts"
+  ],
+  "SelectedNode": "\\controllers\\newPost.js",
+  "PreviewInSolutionExplorer": false
+}

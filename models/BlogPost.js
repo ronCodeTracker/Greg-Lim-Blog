@@ -17,7 +17,7 @@ const BlogPostSchema = new Schema({
     },
     datePosted: {/* can declare property type with an object like this becasue we need 'default'*/
         type: Date,
-        default: new Date()
+        default: Date("<YYYY-mm-dd>")
 
     },
     image: {
