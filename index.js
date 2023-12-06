@@ -39,7 +39,7 @@ app.use(expressSession({
 
 
 
-app.listen(4000, () => {
+app.listen($PORT || 80, () => {
     console.log('Listening on port 4000')
 })
 
