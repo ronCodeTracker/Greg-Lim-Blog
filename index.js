@@ -37,10 +37,10 @@ app.use(expressSession({
 
 
 
+var port = process.env.PORT || 4000
 
-
-app.listen(80, () => {
-    console.log('Listening on port 80')
+app.listen(port, () => {
+    console.log('Listening on port 4000 if local')
 })
 
 
