@@ -138,6 +138,12 @@ const logout = require('./controllers/logout')
 app.post('/posts/store', authMiddleware, storePostController)
 //  **********************************************************************
 
+// delete a post in mongodb handler  **************************
+const deletePostController = require('./controllers/delete.js')
+app.get('/posts/delete', authMiddleware, deletePostController)
+
+//     ********************************************************
+
 
 //  logout request handler  **********************
 app.get('/auth/logout', logoutController)
